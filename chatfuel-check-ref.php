@@ -4,7 +4,7 @@ error_reporting(0);
 
 $servername = "us-cdbr-iron-east-03.cleardb.net";
 $username = "bc8adfd337a147";
-$password = "8636ab6c@";
+$password = "8636ab6c";
 $dbname = "heroku_6b42f3a320e7b6f";
 
 // Create connection
