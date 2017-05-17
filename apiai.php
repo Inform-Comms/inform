@@ -26,12 +26,19 @@ header('Content-Type: application/json');
 $context ="report-issue";
 $source= "Inform";
 
+
 $json = array(
                     'speech'   => $speech,
                     'displayText' => $text,
-                    'data' => [],
-                    'contextOut' => [$context],
                     'source' => $source
             );
+
+// $json = array(
+//                    'speech'   => $speech,
+//                    'displayText' => $text,
+//                    'data' => [],
+//                    'contextOut' => [$context],
+//                    'source' => $source
+//            );
 	echo json_encode($json, JSON_PRETTY_PRINT);
 ?>
