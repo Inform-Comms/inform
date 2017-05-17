@@ -5,10 +5,11 @@ error_reporting(0);
 //file_put_contents('test.txt', json_encode($_GET)); // save the JSON data passed on to URL
 $json_result = json_encode($_GET);
 
-$servername = "109.169.61.112";
-$username = "chatfuel";
-$password = "unh4ck4bl3123!";
-$dbname = "chatfuel";
+
+$servername = "us-cdbr-iron-east-03.cleardb.net";
+$username = "bc8adfd337a147";
+$password = "8636ab6c@!";
+$dbname = "heroku_6b42f3a320e7b6f";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
