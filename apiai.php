@@ -23,7 +23,7 @@ $text=$speech;
 //outputting back to api.ai - works fine as well
 header('Content-Type: application/json');
 
-$context ="MissedBin";
+$context ="report-issue";
 $source= "Inform";
 
 $json = array(
