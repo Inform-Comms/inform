@@ -4,6 +4,8 @@ error_reporting(0);
 
 //file_put_contents('test.txt', json_encode($_GET)); // save the JSON data passed on to URL
 $json_result = json_encode($_GET);
+$json_result_post = json_encode(array_values($_POST));
+
 
 
 $servername = "us-cdbr-iron-east-03.cleardb.net";
@@ -23,7 +25,7 @@ $sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_result')";
 
 $conn->query($sql);
 
-$sql1 = "INSERT INTO records (id, result) VALUES (NULL, '$_POST')";
+$sql1 = "INSERT INTO records (id, result) VALUES (NULL, '$json_result_post')";
 
 $conn->query($sql1);
 //$conn->close();
