@@ -15,14 +15,26 @@ $response=json_decode($json_data);
 $result =$response->result;  //result is an array
 $parameters = $result->parameters;  // parameters is also an array
 
-$json_for_sql =json_encode($parameters);
+
+//if (array_key_exists('reference_number', $parameters)) {
+    $speech=$response->result->parameters->reference_number;
+//}
+
+
+
+$json_for_sql =json_encode($parameters);  // preparing the array to insert into database
+
+
+
+
+
 
 $address = $parameters->address; // address is the variable with value
 //echo $address;
 //echo $response->result->parameters->address; //this works the same way
 
-$speech=  $response->result->parameters->address;
-$text=$speech;
+//$speech=  $response->result->parameters->address;
+//$text=$speech;
 }
 
 
@@ -37,7 +49,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-//$sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_data')";
 $sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_for_sql')";
 
 $conn->query($sql);
@@ -59,14 +70,14 @@ $result = $conn->query($read_sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        // echo 'Your reference number is '.$row["reference"].'!"}';
-     $speech= 'Thank you for submitting this information. Your reference number is '.$row["reference"].'. You can come back here and lookup the status of your issue using this number.';
+
+   //  $speech= 'Thank you for submitting this information. Your reference number is '.$row["reference"].'. You can come back here and lookup the status of your issue using this number.';
 }
 
 } 
 else 
 {
-          $speech= 'Unable to retrieve the reference number at this point';
+       //   $speech= 'Unable to retrieve the reference number at this point';
 }
 $conn->close();
 
@@ -74,8 +85,7 @@ $conn->close();
 $text = $speech;
 
 
-//$speech= "Not sure what to say next";
-//$text= "Not sure what to say next";
+
 
 
 
