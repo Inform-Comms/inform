@@ -27,6 +27,19 @@ $context ="report-issue";
 $source= "Inform";
 
 
+
+
+{
+      "source": "Inform",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Great. You have registered flytipping and we have passed it to the relevant department to deal with this issue."
+        }
+      ]
+    }
+
+
 $json = array(
                     'speech'   => $speech,
                     'displayText' => $text,

@@ -4,9 +4,9 @@ error_reporting(0);
 
 //file_put_contents('test.txt', json_encode($_GET)); // save the JSON data passed on to URL
 $json_result = json_encode($_GET);
-$json_result_post = json_encode(array_values($_POST));
+//$json_result_post = json_encode($_POST);
 
-
+$json_result_post= file_get_contents('php://input'));
 
 $servername = "us-cdbr-iron-east-03.cleardb.net";
 $username = "bc8adfd337a147";
