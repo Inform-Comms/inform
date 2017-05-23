@@ -14,6 +14,9 @@ $json_data = file_get_contents("php://input");
 $response=json_decode($json_data);
 $result =$response->result;  //result is an array
 $parameters = $result->parameters;  // parameters is also an array
+
+$json_for_sql =json_encode($parameters);
+
 $address = $parameters->address; // address is the variable with value
 //echo $address;
 //echo $response->result->parameters->address; //this works the same way
@@ -34,7 +37,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_data')";
+//$sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_data')";
+$sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_for_sql')";
 
 $conn->query($sql);
 
