@@ -29,6 +29,7 @@ $parameters = $result->parameters;  // parameters is also an array
 if (array_key_exists('reference_number', $parameters)) {
     
 $reference_number = $response->result->parameters->reference_number;
+$speech='Test';
 
 $read_sql = "select status from records where id=".$reference_number." limit 0,1";
 $result = $conn->query($read_sql);
