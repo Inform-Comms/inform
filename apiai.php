@@ -1,8 +1,5 @@
 <?php
 
-$speech= "Not sure what to say next";
-$text= "Not sure what to say next";
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 $json_data = file_get_contents("php://input");
@@ -19,6 +16,11 @@ $address = $parameters->address; // address is the variable with value
 $speech=  $response->result->parameters->address;
 $text=$speech;
 }
+
+$speech= "Not sure what to say next";
+$text= "Not sure what to say next";
+
+
 
 //outputting back to api.ai - works fine as well
 header('Content-Type: application/json');
