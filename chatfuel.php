@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+//error_reporting(0);
 
 //file_put_contents('test.txt', json_encode($_GET)); // save the JSON data passed on to URL
 $json_result = json_encode($_GET);
