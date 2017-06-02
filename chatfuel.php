@@ -1,5 +1,5 @@
 <?php
-
+echo "hello at teh top";
 //error_reporting(0);
 
 //file_put_contents('test.txt', json_encode($_GET)); // save the JSON data passed on to URL
@@ -40,25 +40,25 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         // echo 'Your reference number is '.$row["reference"].'!"}';
 		 echo '
-{
- "messages": [
-   {"text": "Thank you for submitting this information. Your reference number is '.$row["reference"].'. You can come back here and lookup the status of your issue using this number."}
- ]
-}
-';
-}
+		{
+		 "messages": [
+		   {"text": "Thank you for submitting this information. Your reference number is '.$row["reference"].'. You can come back here and lookup the status of your issue using this number."}
+		 ]
+		}
+		';
+		}
 
-} 
+		} 
 else 
-{
-		 echo '
-{
- "messages": [
-   {"text": "Unable to retrieve the reference number at this point"}
- ]
-}
-';
-}
+		{
+				 echo '
+		{
+		 "messages": [
+		   {"text": "Unable to retrieve the reference number at this point"}
+		 ]
+		}
+		';
+		}
 $conn->close();
 
 ?>
