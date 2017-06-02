@@ -31,7 +31,7 @@ $conn->query($sql1);
 //$conn->close();
 
 // select the reference number and display to the user
-	
+echo "hello";	
 $read_sql = "select max(id) as reference from records limit 0,1";
 $result = $conn->query($read_sql);
 
