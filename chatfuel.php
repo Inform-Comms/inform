@@ -1,5 +1,6 @@
 <?php
-echo "hello at teh top";
+echo "hello at the top";
+exit();
 //error_reporting(0);
 
 //file_put_contents('test.txt', json_encode($_GET)); // save the JSON data passed on to URL
@@ -16,6 +17,7 @@ $dbname = "heroku_6b42f3a320e7b6f";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -28,10 +30,10 @@ $conn->query($sql);
 $sql1 = "INSERT INTO records (id, result) VALUES (NULL, '$json_result_post')";
 
 $conn->query($sql1);
-//$conn->close();
+
 
 // select the reference number and display to the user
-echo "hello";	
+	
 $read_sql = "select max(id) as reference from records limit 0,1";
 $result = $conn->query($read_sql);
 
@@ -42,7 +44,7 @@ if ($result->num_rows > 0) {
 		 echo '
 		{
 		 "messages": [
-		   {"text": "Thank you for submitting this information. Your reference number is '.$row["reference"].'. You can come back here and lookup the status of your issue using this number."}
+		   {"text": "Thank you for submitting this information. Your reference number is $row["reference"]. You can come back here and lookup the status of your issue using this number."}
 		 ]
 		}
 		';
