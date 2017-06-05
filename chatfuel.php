@@ -22,14 +22,17 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 $sql = "INSERT INTO records (id, result) VALUES (NULL, '$json_result')";
-
 $conn->query($sql);
+}
 
-//$sql1 = "INSERT INTO records (id, result) VALUES (NULL, '$json_result_post')";
-
-//$conn->query($sql1);
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$sql1 = "INSERT INTO records (id, result) VALUES (NULL, '$json_result_post')";
+$conn->query($sql1);
+}
 
 // select the reference number and display to the user
 	
