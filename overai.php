@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
  echo  
      '{
   "result": {
-  "introSpeakOut": "17:55 The status for reference '.str($reference_number).' whatever"
+  "introSpeakOut": "18:00 The status for reference '.str($reference_number).' whatever"
   }
 }';
 exit(0);
