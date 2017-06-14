@@ -10,7 +10,7 @@ $dbname = "heroku_6b42f3a320e7b6f";
 
 
 
-
+//If we have JSON load by POST - echo something. Otherwise -just quit
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
  echo  
      '{
   "result": {
-  "introSpeakOut": "The status for reference '.$reference_number.'whatever"
+  "introSpeakOut": "The status for reference whatever"
   }
 }';
 
