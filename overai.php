@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         //print_r($response->nluResponse);    
         //$reference_number ='123';
         $reference_number = $response->nluResponse->input;
-        $reference_number = $response->nlu_Response->input;
+        $reference_number = $response->nlu_response->input;
         // get the reference number status from the database
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
              echo  
              '{
           "result": {
-          "introSpeakOut": "18:25 The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
+          "introSpeakOut": "18:27 The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
           }
         }';
         }
