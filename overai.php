@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $response=json_decode($json_data);
         //print_r($response->nluResponse);    
         //$reference_number ='123';
-        $reference_number = $response->nluResponse->input;
-        $reference_number = $response->nlu_response->input;
+        $reference_number = $response->nluResponse->input;  //
+        $reference_number = $response->input;
         // get the reference number status from the database
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
              echo  
              '{
           "result": {
-          "introSpeakOut": "18:30 The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
+          "introSpeakOut": "18:31 The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
           }
         }';
         }
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         '
         {
           "result": {
-          "introSpeakOut": "18:30 Unable to retrieve the reference number at this point"
+          "introSpeakOut": "18:31 Unable to retrieve the reference number at this point"
           }
         }';
 
