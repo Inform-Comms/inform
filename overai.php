@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $json_data = file_get_contents("php://input");
         $response=json_decode($json_data);
             
-        $reference_number = $response->thirdparty->result->input;
+        $reference_number = $response->nluResponse->input;
 
  echo  
      '{
   "result": {
-  "introSpeakOut": "17:44 The status for reference '.$reference_number.' whatever"
+  "introSpeakOut": "17:48 The status for reference '.$reference_number.' whatever"
   }
 }';
 exit(0);
