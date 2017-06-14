@@ -16,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $json_data = file_get_contents("php://input");
         $response=json_decode($json_data);
 
-        $reference_number = $response->input;
+        $reference_number = str_replace(' ', '', $response->input);
+
         // get the reference number status from the database
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
