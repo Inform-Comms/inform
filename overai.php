@@ -9,6 +9,41 @@ $password = "8636ab6c";
 $dbname = "heroku_6b42f3a320e7b6f";
 
 
+
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+        $json_data = file_get_contents("php://input");
+        $response=json_decode($json_data);
+            
+              $reference_number = $response->result->parameters->input;
+
+
+}
+else
+exit(0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // get the reference number status from the database
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,9 +58,8 @@ $result = $conn->query($read_sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-     echo 
-'
-{
+     echo  
+     '{
   "result": {
   "introSpeakOut": "The status for reference '.$_GET['reference'].' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
   }
