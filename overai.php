@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   "introSpeakOut": "The status for reference whatever"
   }
 }';
-
+exit(0);
 
 }
 else
