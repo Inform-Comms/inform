@@ -17,15 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $json_data = file_get_contents("php://input");
         $response=json_decode($json_data);
             
-              $reference_number = $response->result->parameters->input;
+        $reference_number = $response->result->parameters->input;
 
  echo  
      '{
   "result": {
-  "introSpeakOut": "The status for reference '$reference_number.'whatever"
+  "introSpeakOut": "The status for reference '.$reference_number.'whatever"
   }
 }';
-
 
 
 }
