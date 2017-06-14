@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(0);
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 
 $servername = "us-cdbr-iron-east-03.cleardb.net";
 $username = "bc8adfd337a147";
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
         $json_data = file_get_contents("php://input");
         $response=json_decode($json_data);
-            
+        print_r($response);    
         $reference_number = $response->nluResponse->input;
 
  echo  
