@@ -19,6 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             
               $reference_number = $response->result->parameters->input;
 
+ echo  
+     '{
+  "result": {
+  "introSpeakOut": "The status for reference '$reference_number.'whatever"
+  }
+}';
+
+
 
 }
 else
