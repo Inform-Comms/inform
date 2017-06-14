@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $json_data = file_get_contents("php://input");
         $response=json_decode($json_data);
             
-        $reference_number = $response->result->parameters->input;
+        $reference_number = $response->thirdparty->result->input;
 
  echo  
      '{
