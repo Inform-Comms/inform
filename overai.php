@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
              echo  
              '{
           "result": {
-          "introSpeakOut": "The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
+          "introSpeakOut": "18:50 The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
           }
         }';
         }
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         '
         {
           "result": {
-          "introSpeakOut": "Unable to retrieve the reference number at this point"
+          "introSpeakOut": "18:50 Unable to retrieve the reference number at this point"
           }
         }';
 
