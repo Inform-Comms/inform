@@ -1,13 +1,12 @@
 <?php
 
 error_reporting(0);
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 
 $servername = "us-cdbr-iron-east-03.cleardb.net";
 $username = "bc8adfd337a147";
 $password = "8636ab6c";
 $dbname = "heroku_6b42f3a320e7b6f";
-
 
 
 //If we have JSON load by POST - echo something. Otherwise -just quit
@@ -16,9 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
         $json_data = file_get_contents("php://input");
         $response=json_decode($json_data);
-        //print_r($response->nluResponse);    
-        //$reference_number ='123';
-        $reference_number = $response->nluResponse->input;  //
+
         $reference_number = $response->input;
         // get the reference number status from the database
         // Create connection
@@ -37,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
              echo  
              '{
           "result": {
-          "introSpeakOut": "18:31 The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
+          "introSpeakOut": "The status for reference '.$reference_number.' is `'.$row["status"].'` You can come back here later to lookup the status of your issue using this number."
           }
         }';
         }
@@ -50,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         '
         {
           "result": {
-          "introSpeakOut": "18:31 Unable to retrieve the reference number at this point"
+          "introSpeakOut": "Unable to retrieve the reference number at this point"
           }
         }';
 
@@ -60,31 +57,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 $conn->close();
 
 }
-else
-exit(0);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
