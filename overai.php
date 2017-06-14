@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         $response=json_decode($json_data);
         //print_r($response);    
         $reference_number ='123';
-       // $reference_number = $response->result->parameters->input;
+        $reference_number = $response->nluResponse->result->parameters->input;
 
  echo  
      '{
